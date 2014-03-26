@@ -28,7 +28,7 @@ docReady(fn) can be called as many times as desired and each callback function w
 called in order when the DOM is done being parsed and is ready for manipulation.
 
 If you call docReady(fn) after the DOM is already ready, the callback with be executed
-as soon as the current thread of execution finishes by using setTimer(fn, 1).
+as soon as the current thread of execution finishes by using setTimeout(fn, 1).
 
 It has been tested in the following browser configurations:
 
@@ -39,3 +39,5 @@ Safari 5.1 and up
 Opera 11.6 and up
 Multiple iOS devices
 Multiple Android devices
+
+Other discussion can be found here: http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the/9899701#9899701
