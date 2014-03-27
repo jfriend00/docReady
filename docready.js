@@ -3,7 +3,7 @@
     // but you can pass in your own object and own function name and those will be used
     // if you want to put them in a different namespace
     funcName = funcName || "docReady";
-    baseObj = baseobj || window;
+    baseObj = baseObj || window;
     var readyList = [];
     var readyFired = false;
     var readyEventHandlersInstalled = false;
@@ -38,7 +38,7 @@
     // docReady(fn, context);
     // the context argument is optional - if present, it will be passed
     // as an argument to the callback
-    baseObj[fname] = function(callback, context) {
+    baseObj[funcName] = function(callback, context) {
         // if ready has already fired, then just schedule the callback
         // to fire asynchronously, but right away
         if (readyFired) {
