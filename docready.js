@@ -29,7 +29,7 @@
     }
     
     function readyStateChange() {
-		if ( document.readyState === "complete" ) {
+        if ( document.readyState === "complete" ) {
             ready();
         }
     }
