@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>docReady Test Page</title>
+    <script src="docready.min.js"></script>  
+    <script>
+    // test basic document.ready
+    docReady(function() {
+        document.body.appendChild(document.createTextNode("test basic document.ready"));
+        // test adding new docReady handler from a docReady callback
+        docReady(function() {
+            document.body.appendChild(document.createTextNode(" | test adding new docReady handler from a docReady callback"));
+        });
+    });
+
+    // test finding an ID in the document
+    docReady(function() {
+        document.getElementById("test").innerHTML = "test finding an ID in the document";
+    });
+
+    // test calling docReady after window load and
+    // docReady has already fired
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+        document.body.appendChild(document.createTextNode(" | test calling docReady after window load"));
+            
+            docReady(function(arg) {
+                document.body.appendChild(document.createTextNode(arg));
+            }, " | and docReady has already fired");
+        }, 1);
+    });
+    </script>
+</head>
+
+<body>
+    <div id="test"></div>
+</body>
+</html>
