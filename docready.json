@@ -1,0 +1,25 @@
+{
+	"name": "docReady",
+	"title": "Plain JavaScript replacement for jQuery's .ready()",
+	"homepage": "https://github.com/jfriend00/docReady",
+	"description": "single plain javascript function that provides a method of  scheduling one or more javascript functions to run at some later point when the DOM has finished loading.",
+	"keywords": [
+		"javascript",
+		"domready",
+		"document ready"
+	],
+	"version": "0.1",
+	"author": {
+		"name": "jfriend00",
+		"url": "https://github.com/jfriend00"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/jfriend00/docReady/blob/master/license"
+		}
+	],
+	"bugs": "https://github.com/jfriend00/docReady/issues",
+	"docs": "https://github.com/jfriend00/docReady#readme",
+	"download": "https://github.com/jfriend00/docReady/archive/master.zip"
+}

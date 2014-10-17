@@ -1,3 +1,12 @@
+/*
+ *  Plain JavaScript replacement for jQuery's .ready() - v0.1
+ *  single plain javascript function that provides a method of  scheduling one or more javascript functions to run at some later point when the DOM has finished loading.
+ *
+ *  https://github.com/jfriend00/docReady
+ *
+ *  By: jfriend00 |  
+ *  License: MIT
+ */
 (function(funcName, baseObj) {
     // The public function name defaults to window.docReady
     // but you can pass in your own object and own function name and those will be used
@@ -65,5 +74,5 @@
             }
             readyEventHandlersInstalled = true;
         }
-    }
+    };
 })("docReady", window);
