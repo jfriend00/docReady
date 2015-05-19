@@ -1,7 +1,9 @@
 (function(funcName, baseObj) {
+    "use strict";
     // The public function name defaults to window.docReady
-    // but you can pass in your own object and own function name and those will be used
-    // if you want to put them in a different namespace
+    // but you can modify the last line of this function to pass in a different object or method name
+    // if you want to put them in a different namespace and those will be used instead of 
+    // window.docReady(...)
     funcName = funcName || "docReady";
     baseObj = baseObj || window;
     var readyList = [];
@@ -49,7 +51,8 @@
             readyList.push({fn: callback, ctx: context});
         }
         // if document already ready to go, schedule the ready function to run
-        if (document.readyState === "complete") {
+        // IE only safe when readyState is "complete", others safe when readyState is "interactive"
+        if (document.readyState === "complete" || (!document.attachEvent && document.readyState === "interactive")) {
             setTimeout(ready, 1);
         } else if (!readyEventHandlersInstalled) {
             // otherwise if we don't have event handlers installed, install them
@@ -67,3 +70,5 @@
         }
     }
 })("docReady", window);
+// modify this previous line to pass in your own method name 
+// and object for the method to be attached to
