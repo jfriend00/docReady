@@ -41,6 +41,9 @@
     // the context argument is optional - if present, it will be passed
     // as an argument to the callback
     baseObj[funcName] = function(callback, context) {
+        if (typeof callback !== "function") {
+            throw new TypeError("callback for docReady(fn) must be a function");
+        }
         // if ready has already fired, then just schedule the callback
         // to fire asynchronously, but right away
         if (readyFired) {
