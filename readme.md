@@ -58,6 +58,10 @@ It has been tested in the following browser configurations:
 - Multiple iOS devices
 - Multiple Android devices
 
+## Demo
+
+You can demo the script [here](https://raw.githack.com/jfriend00/docReady/master/docreadytest.html)
+
 ## Usage
 
 Simply load the script via a script tag:
