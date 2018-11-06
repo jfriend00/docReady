@@ -66,4 +66,7 @@ Simply load the script via a script tag:
 <script src="https://cdn.jsdelivr.net/gh/jfriend00/docReady@master/docready.min.js"></script>
 ```
 
-Other discussions can be found [here](http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the/9899701#9899701).
+## Discussion
+
+The discussion can be found [here](http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the/9899701#9899701).
+
