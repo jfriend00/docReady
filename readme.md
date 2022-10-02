@@ -1,76 +1,47 @@
 # docready
 
-## Summary
+Run a function when the DOM finishes loading.
 
-docReady is a single plain javascript function that provides a method of 
-scheduling one or more javascript functions to run at some later
-point when the DOM has finished loading.
+Similar to [jQuery](https://jquery.com/)'s [`$(document).ready()`](https://api.jquery.com/ready/), but as a small, standalone function.
 
-It works similarly to [jQuery](https://jquery.com/)'s `$(document).ready()`, but this is a small
-single standalone function that does not require jQuery in any way.
+[Demo](https://raw.githack.com/jfriend00/docReady/master/docreadytest.html)
 
-## Examples
+## Install
 
-These are various forms of usage:
-
-```js
-// pass a function reference
-docReady(fn);
-```
-
-```js
-// use an anonymous function
-docReady(function() {
-    // code here
-});
-```
-
-```js
-// pass a function reference and a context
-// the context will be passed to the function as the first argument
-docReady(fn, context);
-```
-
-```js
-// use an anonymous function with a context
-docReady(function(ctx) {
-    // code here that can use the context argument that was passed to docReady
-}, context);
-```
-
-## Side notes
-
-docReady(fn) can be called as many times as desired and each callback function will be
-called in order when the DOM is done being parsed and is ready for manipulation.
-
-If you call docReady(fn) after the DOM is already ready, the callback with be executed
-as soon as the current thread of execution finishes by using setTimeout(fn, 1).
-
-## Browser compatibility
-
-It has been tested in the following browser configurations:
-
-- IE6 and up
-- Firefox 3.6 and up
-- Chrome 14 and up
-- Safari 5.1 and up
-- Opera 11.6 and up
-- Multiple iOS devices
-- Multiple Android devices
-
-## Demo
-
-You can demo the script [here](https://raw.githack.com/jfriend00/docReady/master/docreadytest.html)
-
-## Usage
-
-Simply load the script via a script tag:
+With a script tag:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/jfriend00/docReady@master/docready.min.js"></script>
 ```
 
-## Discussion
+## Usage
 
-The discussion can be found [here](http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the/9899701#9899701).
+```js
+docReady(() => {
+    // Document is ready
+});
+```
 
+```js
+// Pass a value to the function
+docReady(unicorn => {
+    // Document is ready
+    // unicorn === '🦄'
+}, '🦄');
+```
+
+## API
+
+Each function will be called in the order that they are provided to `docReady()` when the DOM has fininshed being parsed and is ready for manipulation.
+
+If you call `docReady()` while the DOM is already ready, the callback with be executed as soon as the current thread of execution finishes by using `setTimeout(fn, 1)`.
+
+## Browser support
+
+Tested to be working in the following browsers:
+
+- IE6+
+- Firefox 3.6+
+- Chrome 14+
+- Safari 5.1+
+- Opera 11.6+
